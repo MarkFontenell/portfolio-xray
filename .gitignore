@@ -1,0 +1,27 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+
+# PyCharm
+.idea/
+
+# Environment variables
+.env
+.env.*
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Testing
+.pytest_cache/
+.coverage
+
+# System
+.DS_Store
+Thumbs.db
