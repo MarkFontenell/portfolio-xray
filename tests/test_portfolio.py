@@ -48,6 +48,18 @@ def test_asset_type_values() -> None:
     }
 
 
+def test_asset_type_members_are_distinct() -> None:
+    """Different enum values must never compare equal."""
+    assert AssetType.CASH != AssetType.STOCK
+    assert AssetType.STOCK != AssetType.BOND
+    assert AssetType.CASH != AssetType.BOND
+
+
+def test_asset_type_is_hashable() -> None:
+    """Enum members must remain usable as dictionary keys and set entries."""
+    assert len({AssetType.CASH, AssetType.STOCK, AssetType.BOND}) == 3
+
+
 def test_create_asset() -> None:
     asset = make_asset("SBER", 50_000.0, name="Сбербанк", asset_type=AssetType.STOCK, duration=2.0)
     assert asset.ticker == "SBER"
