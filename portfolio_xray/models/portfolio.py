@@ -1,7 +1,6 @@
 from enum import Enum
 from dataclasses import dataclass, field
 
-@dataclass
 class AssetType(Enum):
     CASH = "cash"
     STOCK = "stock"
